@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 import history from '../history';
 
@@ -8,10 +9,8 @@ class Dashboard extends React.Component {
 
     logoutFunc = () => {
         console.log('logout invoked!');
-        localStorage.removeItem('isSignedIn');
-        localStorage.removeItem('username');
+        localStorage.clear();
         history.push('/login');
-
     }
 
     renderUsername = () => {
@@ -31,7 +30,8 @@ class Dashboard extends React.Component {
             <div>
                 <h1>Dashboard!</h1>
                 {this.renderUsername()}
-                <button className="ui button primary" onClick={()=> this.logoutFunc()}>Logout</button>
+                <Link to="/profile" className="ui button primary">Profile</Link>
+                <button className="ui button red" onClick={()=> this.logoutFunc()}>Logout</button>
             </div>
         )
     }
