@@ -12,6 +12,20 @@ import history from '../history';
 class App extends React.Component {
 
 
+    checkSignedIn = () => {
+
+        const signedIn = localStorage.getItem('isSignedIn');
+        console.log(signedIn);
+
+        if(signedIn) {
+            return <Redirect to="/dashboard" />
+        }
+        else {
+            return <Redirect to="/login" />
+        }
+    }
+
+
     renderComponent = () => {
 
         return (
@@ -21,7 +35,8 @@ class App extends React.Component {
                     <Switch> 
                         <Route path="/login" exact component={Login} />
                         <PrivateRoute path="/dashboard" exact component={Dashboard} isSignedIn={this.props.isSignedIn} />
-                        <Redirect to="/login" />
+                        {/* <Redirect to="/login" /> */}
+                        {this.checkSignedIn()}
                     </Switch>
                 </div>
                 </Router>

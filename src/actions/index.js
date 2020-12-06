@@ -7,6 +7,7 @@ export const checkLogin = (formValues) => {
         if(formValues.username === 'raj' && formValues.password === 'raj')
         {
             console.log('Login Success!');
+            localStorage.setItem('isSignedIn', true);
             dispatch({ type: 'LOGIN_SUCCESS', payload: formValues });
             history.push('/dashboard');
         }

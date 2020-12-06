@@ -4,13 +4,14 @@ import { connect } from 'react-redux';
 
 const PrivateRoute = ({ component: Component, isSignedIn: isSignedIn,  ...rest }) => {
 
-  console.log('isSignedIn? ',isSignedIn);
+  const signedIn = localStorage.getItem('isSignedIn') ? true : false;
+  console.log('SIGNED_IN? ',signedIn);
 
   return (
     <Route
       {...rest}
       render={props =>
-        isSignedIn ? (
+        signedIn ? (
           <Component {...props} />
         ) : (
           <Redirect to={{ pathname: '/login', state: { from: props.location } }} />
