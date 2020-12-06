@@ -8,11 +8,12 @@ export const checkLogin = (formValues) => {
         {
             console.log('Login Success!');
             localStorage.setItem('isSignedIn', true);
-            dispatch({ type: 'LOGIN_SUCCESS', payload: formValues });
+            localStorage.setItem('username', formValues.username );
+            dispatch({ type: 'LOGIN_SUCCESS', payload: formValues.username });
             history.push('/dashboard');
         }
         else {
-            const message = 'Invalid login creds'
+            const message = 'Invalid login credentials!'
             dispatch({ type: 'LOGIN_FAILURE', payload: message });
         }
     }

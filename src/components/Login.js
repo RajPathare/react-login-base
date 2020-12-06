@@ -68,7 +68,7 @@ const validate = (formValues) => {
 const mapStateToProps = (state) => {
     return {
         isSignedIn: state.auth.isSignedIn,
-        creds: state.auth.creds,
+        username: state.auth.username,
         loginError: state.auth.loginError
     }
 }
