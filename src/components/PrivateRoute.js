@@ -1,8 +1,7 @@
 import React from 'react'
 import { Redirect, Route } from 'react-router-dom'
-import { connect } from 'react-redux';
 
-const PrivateRoute = ({ component: Component, isSignedIn: isSignedIn,  ...rest }) => {
+const PrivateRoute = ({ component: Component, ...rest }) => {
 
   const signedIn = localStorage.getItem('isSignedIn') ? true : false;
   console.log('SIGNED_IN? ',signedIn);

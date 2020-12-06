@@ -5,8 +5,6 @@ import PrivateRoute from './PrivateRoute';
 import Dashboard from './Dashboard';
 import Login from './Login'
 
-import { connect } from 'react-redux';
-
 import history from '../history';
 
 class App extends React.Component {
@@ -34,7 +32,7 @@ class App extends React.Component {
                 <div>
                     <Switch> 
                         <Route path="/login" exact component={Login} />
-                        <PrivateRoute path="/dashboard" exact component={Dashboard} isSignedIn={this.props.isSignedIn} />
+                        <PrivateRoute path="/dashboard" exact component={Dashboard} />
                         {/* <Redirect to="/login" /> */}
                         {this.checkSignedIn()}
                     </Switch>
@@ -52,13 +50,4 @@ class App extends React.Component {
 
 }
 
-const mapStateToProps = (state) => {
-    return {
-        isSignedIn: state.auth.isSignedIn
-    }
-}
-
-
-export default connect(mapStateToProps,{
-
-})(App);
+export default App;
