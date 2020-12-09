@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 
-class Profile extends React.Component {
+class Selection extends React.Component {
 
 
     renderUsername = () => {
@@ -42,4 +42,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
 
-})(Profile);
+})(Selection);

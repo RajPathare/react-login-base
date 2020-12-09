@@ -75,6 +75,7 @@ class SideScrollMenu extends React.Component {
        
         return (
             <div className="App">
+                <h3>Select an item</h3>
                 <ScrollMenu
                 data={menu}
                 arrowLeft={ArrowLeft}
@@ -86,30 +87,22 @@ class SideScrollMenu extends React.Component {
         )
     }
 
-
-    printSelectedItem = () => {
-        return (
-            <div>
-                Item name - {this.state.selected}
-            </div>
-        )
-    }
-
     renderButton = () => {
         return (
             <div>
-                <Link to={`/profile/${this.state.selected}`} className="ui button primary">Another page!</Link>
+                <Link to={`/selection/${this.state.selected}`} className="ui button primary">Confirm selection</Link>
             </div>
         )
     }
 
     render()
     {
-        return <div>
-        {this.renderMenu()}
-        {this.printSelectedItem()}
-        {this.renderButton()}
-        </div>
+        return (
+            <div>
+                {this.renderMenu()}
+                {this.renderButton()}
+            </div>
+        )
     }
 }
 

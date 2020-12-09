@@ -3,7 +3,7 @@ import { Router, Route, Switch, Redirect } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 
 import Dashboard from './Dashboard';
-import Profile from './Profile';
+import Selection from './Selection';
 import Login from './Login'
 
 import history from '../history';
@@ -34,7 +34,7 @@ class App extends React.Component {
                     <Switch> 
                         <Route path="/login" exact component={Login} />
                         <PrivateRoute path="/dashboard" exact component={Dashboard} />
-                        <PrivateRoute path="/profile/:selected" exact component={Profile} />
+                        <PrivateRoute path="/selection/:selected" exact component={Selection} />
                         {/* <Redirect to="/login" /> */}
                         {this.checkSignedIn()}
                     </Switch>

@@ -31,7 +31,6 @@ class Dashboard extends React.Component {
             <div>
                 <h1>Dashboard!</h1>
                 {this.renderUsername()}
-                <Link to="/profile" className="ui button primary">Profile</Link>
                 <button className="ui button red" onClick={()=> this.logoutFunc()}>Logout</button>
                 <SideScrollMenu />
             </div>
