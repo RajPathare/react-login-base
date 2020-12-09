@@ -49,7 +49,8 @@ class Login extends React.Component {
         <div className="container">
           <div className="row">
             <div className="col-md-9 col-lg-8 mx-auto">
-              <h3 className="login-heading mb-4">Login!</h3>
+            <h1>SideScroll App</h1>
+              <h3 className="login-heading mb-4">Login</h3>
               <form className="ui form error" onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <div className="form-label-group">
                 <Field name="username" component={this.renderInput} label="Enter username"/> 
