@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
         console.log('username ',this.props.username);
 
         return (
-            <div>
+            <div className="ui container">
                 <h1>Dashboard!</h1>
                 {this.renderUsername()}
                 <button className="ui button red" onClick={()=> this.logoutFunc()}>Logout</button>

@@ -6,6 +6,8 @@ import Dashboard from './Dashboard';
 import Selection from './Selection';
 import Login from './Login'
 
+import Login2 from './Login2';
+
 import history from '../history';
 
 class App extends React.Component {
@@ -28,11 +30,11 @@ class App extends React.Component {
     renderComponent = () => {
 
         return (
-            <div className="ui container">
+            <div>
                 <Router history={history}> 
                 <div>
                     <Switch> 
-                        <Route path="/login" exact component={Login} />
+                        <Route path="/login" exact component={Login2} />
                         <PrivateRoute path="/dashboard" exact component={Dashboard} />
                         <PrivateRoute path="/selection/:selected" exact component={Selection} />
                         {/* <Redirect to="/login" /> */}
