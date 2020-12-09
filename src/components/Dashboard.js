@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 import history from '../history';
 
+import SideScrollMenu from '../components/SideScrollMenu';
 
 class Dashboard extends React.Component {
 
@@ -32,6 +33,7 @@ class Dashboard extends React.Component {
                 {this.renderUsername()}
                 <Link to="/profile" className="ui button primary">Profile</Link>
                 <button className="ui button red" onClick={()=> this.logoutFunc()}>Logout</button>
+                <SideScrollMenu />
             </div>
         )
     }

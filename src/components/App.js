@@ -34,7 +34,7 @@ class App extends React.Component {
                     <Switch> 
                         <Route path="/login" exact component={Login} />
                         <PrivateRoute path="/dashboard" exact component={Dashboard} />
-                        <PrivateRoute path="/profile" exact component={Profile} />
+                        <PrivateRoute path="/profile/:selected" exact component={Profile} />
                         {/* <Redirect to="/login" /> */}
                         {this.checkSignedIn()}
                     </Switch>

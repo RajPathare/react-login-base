@@ -9,13 +9,28 @@ class Profile extends React.Component {
         return (
             <div>
                 <h1>Hello {this.props.username}!</h1>
-                <Link to="/dashboard" className="ui button primary">Dashboard</Link>
+            </div>
+        )
+    }
+
+    renderSelectedItem = () => {
+
+        return (
+            <div>
+                <h1>Selected item - {this.props.match.params.selected}!</h1>
             </div>
         )
     }
 
     render() {
-        return <div>{this.renderUsername()}</div>
+
+        return (
+            <div>
+            {this.renderUsername()}
+            {this.renderSelectedItem()}
+            <Link to="/dashboard" className="ui button primary">Dashboard</Link>
+            </div>
+        )
     }
 }
 
