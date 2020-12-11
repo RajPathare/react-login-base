@@ -53,6 +53,7 @@ class Login extends React.Component {
               <h3 className="login-heading mb-4">Login</h3>
               <form className="ui form error" onSubmit={this.props.handleSubmit(this.onSubmit)}>
                 <div className="form-label-group">
+                <p style={{"color":"red"}}>{this.props.loginError}</p>
                 <Field name="username" component={this.renderInput} label="Enter username"/> 
                 </div>
                 <div className="form-label-group">

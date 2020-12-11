@@ -2,6 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
 
+import Sidebar from '../Dashboards/Sidebar';
+import SelectedPage from './SelectedPage';
+
 class Selection extends React.Component {
 
 
@@ -26,6 +29,8 @@ class Selection extends React.Component {
 
         return (
             <div>
+            <Sidebar />
+            <SelectedPage selectedItem={this.props.match.params.selected} />
             {this.renderUsername()}
             {this.renderSelectedItem()}
             <Link to="/dashboard" className="ui button primary">Dashboard</Link>
