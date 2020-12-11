@@ -18,7 +18,9 @@ const list = [
 const selected = 'item1';
 
 const MenuItem = ({text, selected}) => {
-    return <div className={`menu-item ${selected ? 'active' : ''}`}>{text}</div>;
+    return (<div className={`menu-item ${selected ? 'active' : ''}`}>
+    {text}
+    </div>);
 };
 
 list.map(el => {
@@ -75,7 +77,6 @@ class SideScrollMenu extends React.Component {
        
         return (
             <div className="App">
-                <h3>Select an item</h3>
                 <ScrollMenu
                 data={menu}
                 arrowLeft={ArrowLeft}

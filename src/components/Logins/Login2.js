@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Field, reduxForm } from 'redux-form';
-import { checkLogin } from '../actions';
+import { checkLogin } from '../../actions';
 
 
 import './Login2.css'
